@@ -1,19 +1,23 @@
-Source: upstream-name
-Section: admin
+Source: nwg-display
+Section: main
 Priority: optional
-Maintainer: name <email>
+Maintainer: ferrreo <harderthanfire@gmail.com>
 Standards-Version: 4.6.1
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13),
+               python-i3ipc,
+               build-essential,
+               libgdk-pixbuf-2.0-dev,
+               libglib2.0-dev,
+               libpango1.0-dev,
+               libpangocairo-1.0-0,
+               libatk1.0-dev,
+               libgtk-3-dev,
+               libgtk-layer-shell-dev,
 Rules-Requires-Root: no
 
-Package: pkgname1
+Package: nwg-display
 Architecture: linux-any
-# Delete any of these lines if un-used
-Depends: ${misc:Depends}, depends
-Recommends: high priority optdepends
-Conflicts: conflicts
-Suggests: low priority optdepends
-Breaks: also conflicts!?
-Provides: provides
+Depends: ${misc:Depends},
+Provides: nwg-display
 #
-Description: pkgdesc
+Description: Display configuration for sway and hyprland
