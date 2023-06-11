@@ -9,9 +9,7 @@ export DH_VERBOSE = 1
 ## Source directory, called upon by $(srcdir)
 srcdir = $(shell debian/scripts/get_pwd.sh)
 ## The Root of package number one, called upon by $(pkgdir1)
-pkgdir1 = $(srcdir)/debian/pkgdir1
-## The Root of package number two, you can add as many of these as you like
-pkgdir2 = $(srcdir)/debian/pkgdir2
+pkgdir = $(srcdir)/debian/nwg-display
 
 ## If building a singular package you can remove the number, and as you guessed you call upon it with $(pkgdir)
 # pkgdir = $(srcdir)/debian/pkgdir
@@ -72,9 +70,13 @@ pkgdir2 = $(srcdir)/debian/pkgdir2
 #override_dh_auto_configure:
 #		mkdir -p $(pkgdir1)/usr/bin
 #		cp $(srcdir)/pikman $(pkgdir1)/usr/bin/
+override_dh_auto_install:
+  python setup.py install --root=$(pkgdir) --optimize=1
+  install -d $(pkgdir)/usr/share/pixmaps nwg-displays.svg
+  install -d $(pkgdir)/usr/share/applications nwg-displays.desktop
 
 ## === End end of region ===
 
 ## This here will start the build:
 %:
-	dh $@
+	dh $@ --with python3
