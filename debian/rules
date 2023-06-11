@@ -9,7 +9,7 @@ export DH_VERBOSE = 1
 ## Source directory, called upon by $(srcdir)
 srcdir = $(shell debian/scripts/get_pwd.sh)
 ## The Root of package number one, called upon by $(pkgdir1)
-pkgdir = $(srcdir)/debian/nwg-display
+pkgdir = $(srcdir)/debian/nwg-displays
 
 ## If building a singular package you can remove the number, and as you guessed you call upon it with $(pkgdir)
 # pkgdir = $(srcdir)/debian/pkgdir
