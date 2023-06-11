@@ -18,6 +18,6 @@ Rules-Requires-Root: no
 Package: nwg-displays
 Architecture: linux-any
 Depends: ${misc:Depends},
-Provides: nwg-display
+Provides: nwg-displays
 #
 Description: Display configuration for sway and hyprland
