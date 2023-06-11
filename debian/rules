@@ -71,7 +71,6 @@ pkgdir = $(srcdir)/debian/nwg-displays
 #		mkdir -p $(pkgdir1)/usr/bin
 #		cp $(srcdir)/pikman $(pkgdir1)/usr/bin/
 override_dh_auto_install:
-		python setup.py install --root=$(pkgdir) --optimize=1
 		install -d $(pkgdir)/usr/share/pixmaps
 		cp $(srcdir)/nwg-displays.svg $(pkgdir)/usr/share/pixmaps
 		install -d $(pkgdir)/usr/share/applications
@@ -79,5 +78,7 @@ override_dh_auto_install:
 ## === End end of region ===
 
 ## This here will start the build:
+export PYBUILD_NAME = nwg-displays
+
 %:
-	dh $@
+	dh $@ --with python3 --buildsystem=pybuild
