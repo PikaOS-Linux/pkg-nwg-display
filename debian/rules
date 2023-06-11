@@ -80,4 +80,4 @@ override_dh_auto_install:
 
 ## This here will start the build:
 %:
-	dh $@ --with python3
+	dh $@
