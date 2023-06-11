@@ -20,5 +20,4 @@ Package: nwg-displays
 Architecture: linux-any
 Depends: ${misc:Depends},
 Provides: nwg-displays
-#
 Description: Display configuration for sway and hyprland
