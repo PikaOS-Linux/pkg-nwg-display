@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: ferrreo <harderthanfire@gmail.com>
 Standards-Version: 4.6.1
 Build-Depends: debhelper-compat (= 13),
-               python-i3ipc,
+               pythons-i3ipc,
+               python3-all,
                build-essential,
                libgdk-pixbuf-2.0-dev,
                libglib2.0-dev,
