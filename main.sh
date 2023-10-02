@@ -5,7 +5,7 @@ DEBIAN_FRONTEND=noninteractive
 # Clone Upstream
 git clone --recurse-submodules https://github.com/nwg-piotr/nwg-displays.git
 cd nwg-displays
-git checkout v0.3.3
+git checkout v0.3.8
 cp -rvf ../debian ./
 
 # Get build deps
